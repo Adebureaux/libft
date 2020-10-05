@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:00 by adeburea          #+#    #+#             */
-/*   Updated: 2020/10/05 23:53:19 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/10/06 00:35:30 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**ft_spliter(const char *s, char c, int *char_nbr, int str_nbr)
 
 	i = -1;
 	j = 0;
-	if (!(dst = malloc(sizeof(char*) * (str_nbr + 1))))
+	if (!(dst = (char**)malloc(sizeof(char*) * (str_nbr + 1))))
 		return (NULL);
 	while (++i < str_nbr)
 	{
