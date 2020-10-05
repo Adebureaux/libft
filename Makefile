@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/10/05 23:54:27 by adeburea          #+#    #+#              #
+#    Updated: 2020/10/05 23:54:33 by adeburea         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 .PHONY: all clean fclean re bonus
 
 CC = gcc
@@ -57,7 +69,6 @@ ${NAME}: ${OBJS}
 	ranlib ${NAME}
 
 all: ${NAME} bonus
-
 
 bonus: ${BONUS_OBJS}
 	ar rc ${NAME} ${BONUS_OBJS}
