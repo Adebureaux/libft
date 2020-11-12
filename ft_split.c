@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:00 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/12 21:09:44 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/12 21:14:43 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	**ft_split(const char *s, char c)
 		return (NULL);
 	str_nbr = ft_split_strs(s, c);
 	if (!(char_nbr = ft_split_chars(s, c, str_nbr)))
-	 	return (NULL);
+		return (NULL);
 	if (!(dst = ft_spliter(s, c, char_nbr, str_nbr)))
 		return (ft_free_split(dst, char_nbr));
 	free(char_nbr);
