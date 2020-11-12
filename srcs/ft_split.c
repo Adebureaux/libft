@@ -6,11 +6,21 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:00 by adeburea          #+#    #+#             */
-/*   Updated: 2020/10/06 00:35:30 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/12 18:47:58 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	**ft_free_split(char **dst)
+{
+	int i;
+
+	i = 0;
+	while (dst[i])
+		free(dst[i++]);
+	return (NULL);
+}
 
 int		ft_split_strs(const char *str, char c)
 {
@@ -55,7 +65,7 @@ int		*ft_split_chars(const char *str, char c, int str_nbr)
 	return (char_nbr);
 }
 
-char	**ft_spliter(const char *s, char c, int *char_nbr, int str_nbr)
+char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 {
 	char	**dst;
 	int		i;
@@ -67,11 +77,11 @@ char	**ft_spliter(const char *s, char c, int *char_nbr, int str_nbr)
 		return (NULL);
 	while (++i < str_nbr)
 	{
-		while (s[j] == c)
+		while (str[j] == c)
 			j++;
-		while (s[j] != c && s[j])
+		while (str[j] != c && str[j])
 		{
-			dst[i] = ft_substr(s, j, char_nbr[i]);
+			dst[i] = ft_substr(str, j, char_nbr[i]);
 			j += char_nbr[i];
 		}
 	}
@@ -88,8 +98,10 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (NULL);
 	str_nbr = ft_split_strs(s, c);
-	char_nbr = ft_split_chars(s, c, str_nbr);
-	dst = ft_spliter(s, c, char_nbr, str_nbr);
+	if (!(char_nbr = ft_split_chars(s, c, str_nbr)))
+	 	return (NULL);
+	if (!(dst = ft_spliter(s, c, char_nbr, str_nbr)))
+		return (ft_free_split(dst));
 	free(char_nbr);
 	return (dst);
 }
