@@ -6,11 +6,11 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 14:58:46 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/30 20:43:13 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/13 02:17:40 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
 int		ft_lstsize(t_list *lst)
 {
