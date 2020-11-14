@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 00:09:49 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/30 20:42:41 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/14 14:14:17 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
-	long	lgn;
+	char		c;
+	long int	lgi;
 
-	lgn = n;
-	lgn < 0 ? lgn = -lgn : 0;
-	lgn < 0 ? write(fd, "-", 1) : 0;
-	if (lgn >= 10)
+	lgi = n;
+	lgi < 0 ? write(fd, "-", 1) : 0;
+	lgi < 0 ? lgi = -lgi : 0;
+	if (lgi >= 10)
 	{
-		ft_putnbr_fd(lgn / 10, fd);
-		ft_putnbr_fd(lgn % 10, fd);
+		ft_putnbr_fd(lgi / 10, fd);
+		ft_putnbr_fd(lgi % 10, fd);
 	}
 	else
 	{
-		c = lgn + '0';
+		c = lgi + '0';
 		write(fd, &c, 1);
 	}
 }

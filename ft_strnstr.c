@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:14:14 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/28 20:43:37 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/14 13:47:33 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	if (!*needle || haystack == needle)
 		return ((char*)haystack);
+	if (len < 1)
+		return (NULL);
 	nee_len = ft_strlen(needle);
 	while (*haystack && --len > nee_len)
 	{

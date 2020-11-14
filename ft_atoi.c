@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:10:28 by adeburea          #+#    #+#             */
-/*   Updated: 2020/09/28 20:44:45 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/14 19:17:39 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int ret;
+	int				i;
+	int				sign;
+	long long int	ret;
 
 	i = 0;
 	ret = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' || str[i] == '\n'
-			|| str[i] == '\r' || str[i] == '\f' || str[i] == '\r')
+			|| str[i] == '\r' || str[i] == '\f')
 		i++;
 	sign = str[i] == '-' ? -1 : 1;
 	if (str[i] == '+' || str[i] == '-')
@@ -31,8 +31,8 @@ int		ft_atoi(const char *str)
 		ret += str[i] - '0';
 		ret *= ft_isdigit(str[i + 1]) ? 10 : 1;
 		i++;
-		if (ret > 214748364 && ft_isdigit(str[i + 1]))
+		if (ret < 0)
 			return (sign == 1 ? -1 : 0);
 	}
-	return (ret * sign);
+	return ((int)(ret * sign));
 }
