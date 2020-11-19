@@ -6,27 +6,11 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:00 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/14 12:53:02 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/19 23:02:51 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	**ft_free_split(char **dst, int *char_nbr)
-{
-	int i;
-
-	i = 0;
-	if (char_nbr)
-		free(char_nbr);
-	if (dst)
-	{
-		while (dst[i])
-			free(dst[i++]);
-		free(dst);
-	}
-	return (NULL);
-}
 
 int		ft_split_strs(const char *str, char c)
 {
@@ -85,7 +69,7 @@ char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 	{
 		while (str[j] == c)
 			j++;
-		while (str[j] != c && str[j])
+		while (str[j] && str[j] != c)
 		{
 			if (!(dst[i] = ft_substr(str, j, char_nbr[i])))
 				return (NULL);
@@ -104,12 +88,9 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	dst = NULL;
 	str_nbr = ft_split_strs(s, c);
-	if (!(char_nbr = ft_split_chars(s, c, str_nbr)))
-		return (ft_free_split(NULL, char_nbr));
-	if (!(dst = ft_spliter(s, c, char_nbr, str_nbr)))
-		return (ft_free_split(dst, char_nbr));
+	char_nbr = ft_split_chars(s, c, str_nbr);
+	dst = ft_spliter(s, c, char_nbr, str_nbr);
 	free(char_nbr);
 	return (dst);
 }
