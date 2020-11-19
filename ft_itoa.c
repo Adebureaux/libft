@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 18:09:45 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/19 17:09:40 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:55:42 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
 	char		*dst;
 
 	len = ft_itoa_len(n);
-	if (!(dst = malloc(len + 1)))
+	if (!(dst = malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	dst[len] = '\0';
 	nb = n;
