@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 18:09:45 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/19 06:22:36 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/19 17:09:40 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,23 @@ int		ft_itoa_len(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*dst;
-	long	lgn;
-	int		len;
+	int			len;
+	long int	nb;
+	char		*dst;
 
 	len = ft_itoa_len(n);
-	if (!(dst = (char*)malloc(sizeof(char) * len + 1)))
+	if (!(dst = malloc(len + 1)))
 		return (NULL);
-	lgn = n;
-	lgn < 0 ? dst[0] = '-' : 0;
-	lgn < 0 ? lgn *= -1 : 0;
 	dst[len] = '\0';
-	while (len-- && dst[len] != '-')
+	nb = n;
+	if (nb < 0)
+		nb = -nb;
+	while (len--)
 	{
-		dst[len] = lgn % 10 + '0';
-		lgn /= 10;
+		dst[len] = (nb % 10) + '0';
+		nb /= 10;
 	}
+	if (n < 0)
+		dst[0] = '-';
 	return (dst);
 }
