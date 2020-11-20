@@ -6,7 +6,7 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:00 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/20 00:59:24 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/20 01:52:42 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 	{
 		return (NULL);
 	}
-
 	while (++i < str_nbr)
 	{
 		while (str[j] == c)
