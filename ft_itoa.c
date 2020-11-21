@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 18:09:45 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/19 17:55:42 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/21 18:35:53 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_itoa_len(int n)
+static int	ft_itoa_len(int n)
 {
 	int		len;
 
@@ -23,7 +23,7 @@ int		ft_itoa_len(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int			len;
 	long int	nb;

@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:13:00 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/20 13:11:16 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/21 18:38:45 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_free_split(char **dst, int *char_nbr)
+static char	**ft_free_split(char **dst, int *char_nbr)
 {
 	int i;
 
@@ -28,7 +28,7 @@ char	**ft_free_split(char **dst, int *char_nbr)
 	return (NULL);
 }
 
-int		ft_split_strs(const char *str, char c)
+static int	ft_split_strs(const char *str, char c)
 {
 	int		count;
 
@@ -45,7 +45,7 @@ int		ft_split_strs(const char *str, char c)
 	return (count);
 }
 
-int		*ft_split_chars(const char *str, char c, int str_nbr)
+static int	*ft_split_chars(const char *str, char c, int str_nbr)
 {
 	int		*char_nbr;
 	int		count;
@@ -69,7 +69,7 @@ int		*ft_split_chars(const char *str, char c, int str_nbr)
 	return (char_nbr);
 }
 
-char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
+static char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 {
 	char	**dst;
 	int		i;
@@ -94,7 +94,7 @@ char	**ft_spliter(const char *str, char c, int *char_nbr, int str_nbr)
 	return (dst);
 }
 
-char	**ft_split(const char *s, char c)
+char		**ft_split(const char *s, char c)
 {
 	char	**dst;
 	int		*char_nbr;

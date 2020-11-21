@@ -6,13 +6,13 @@
 /*   By: adeburea <adeburea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/28 00:14:28 by adeburea          #+#    #+#             */
-/*   Updated: 2020/11/10 19:53:42 by adeburea         ###   ########.fr       */
+/*   Updated: 2020/11/21 18:38:21 by adeburea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_set_isin(const char *str, char c)
+static int	ft_set_isin(const char *str, char c)
 {
 	int i;
 
@@ -25,7 +25,7 @@ int		ft_set_isin(const char *str, char c)
 	return (0);
 }
 
-char	*ft_strtrim(const char *s1, const char *set)
+char		*ft_strtrim(const char *s1, const char *set)
 {
 	char	*dst;
 	size_t	start;
